@@ -306,7 +306,33 @@
 .chat-send{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--mango),var(--hibiscus));color:#fff;font-size:1.1rem;flex:none;}.chat-send:disabled{opacity:.5;cursor:default;}
 .chat-foot{font-size:.7rem;text-align:center;color:var(--ink-soft);font-weight:600;padding:0 12px 10px;background:var(--cream);}
 @media(max-width:560px){.chat-panel{right:0;bottom:0;width:100vw;height:100dvh;border-radius:0;}.chat-fab{right:14px;bottom:14px;}}
-</style></head>
+</style><style>
+.grant-band{max-width:1160px;margin:70px auto 0;background:linear-gradient(135deg,var(--ocean-deep),var(--ocean));color:#fff;border-radius:28px;padding:34px 38px;display:grid;grid-template-columns:auto 1fr auto;gap:26px;align-items:center;box-shadow:0 20px 44px rgba(10,60,80,.22);position:relative;z-index:2;}
+.grant-band__icon{font-size:3rem;background:rgba(255,255,255,.16);width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.grant-band__kicker{color:var(--sun);font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:.78rem;}
+.grant-band h2{font-size:clamp(1.5rem,2.6vw,2rem);color:#fff;margin:4px 0 8px;}
+.grant-band p{color:#EAFBFF;font-weight:600;font-size:.98rem;max-width:640px;}
+.grant-band p strong{color:#fff;}
+.grant-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+.grant-chips span{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);padding:5px 12px;border-radius:999px;font-weight:700;font-size:.78rem;}
+.grant-band__cta{display:flex;flex-direction:column;align-items:center;gap:10px;}
+.grant-band__link{color:#fff;font-weight:700;font-size:.88rem;text-decoration:underline;}
+.grant-band+.footer-bottom{margin-top:40px;}
+.grant-modal #grantForm label{display:block;font-weight:700;font-size:.88rem;color:var(--ink);margin-bottom:14px;}
+.grant-modal #grantForm input[type=text],.grant-modal #grantForm input[type=email],.grant-modal #grantForm select,.grant-modal #grantForm textarea{display:block;width:100%;margin-top:6px;padding:12px 14px;border-radius:12px;border:2px solid var(--sand-deep);font-family:'Quicksand',sans-serif;font-weight:600;font-size:.95rem;background:#fff;color:var(--ink);}
+.grant-modal #grantForm textarea{resize:vertical;}
+.grant-modal #grantForm input:focus,.grant-modal #grantForm select:focus,.grant-modal #grantForm textarea:focus{outline:2px solid var(--ocean-bright);}
+.grant-modal .agree-row{display:flex !important;align-items:flex-start;gap:10px;font-size:.85rem !important;}
+.grant-modal .agree-row input{margin-top:3px;width:auto !important;flex:0 0 auto;}
+#grantStatus{margin-top:12px;font-weight:700;color:var(--ocean-deep);text-align:center;}
+.grant-terms{margin-top:22px;padding-top:18px;border-top:1px solid var(--sand-deep);}
+.grant-terms h3{font-family:'Baloo 2',sans-serif;color:var(--ocean-deep);font-size:1.15rem;margin-bottom:6px;}
+.grant-terms ul{padding-left:20px;margin-bottom:10px;list-style:disc;}
+.grant-terms li{font-weight:600;font-size:.9rem;color:var(--ink);margin-bottom:5px;}
+.grant-fine{font-size:.76rem;color:var(--ink-soft);font-weight:600;line-height:1.55;}
+.grant-fine a{color:var(--ocean-deep);font-weight:700;text-decoration:underline;}
+@media(max-width:860px){.grant-band{grid-template-columns:1fr;text-align:center;padding:30px 24px;}.grant-band__icon{margin:0 auto;}.grant-band p{margin:0 auto;}.grant-chips{justify-content:center;}}
+</style><style>.grant-cadence{display:inline-block;margin-top:12px !important;background:var(--sun);color:var(--ocean-deep) !important;font-weight:800 !important;font-size:.88rem !important;padding:6px 14px;border-radius:999px;}</style></head>
 <body>
 <div class="roll-progress"><div class="roll-progress__fill" id="rollFill"></div></div>
 <header id="siteHeader">
@@ -507,6 +533,17 @@
 <label class="newsletter-consent"><input name="consent" required="" type="checkbox" value="yes"/> I give Tropi Fruit permission to email me about restocks, new flavors, news, and offers. I can opt out by contacting <a href="mailto:tropifruit@pm.me">tropifruit@pm.me</a>.</label><p aria-live="polite" id="newsletterStatus" role="status"></p></form>
 <a class="btn btn-outline js-order-trigger" data-product="chews" href="#shop" style="margin-top:18px;color:var(--ocean-deep);border-color:var(--ocean-deep);">Shop Tropi Fruit 🍍</a>
 </div>
+<section class="grant-band reveal" id="grant" aria-labelledby="grantTitle">
+<div class="grant-band__icon" aria-hidden="true">🤝</div>
+<div class="grant-band__text">
+<span class="grant-band__kicker">Giving Back</span>
+<h2 id="grantTitle">The Tropi Fruit Community Grant</h2>
+<p>Tropi Fruit is woman-founded and built on giving back. Our Community Grant is here to support the people and places that strengthen their neighborhoods, including <strong>individuals</strong>, <strong>daycares and learning centers</strong>, <strong>small businesses</strong>, and <strong>community organizations</strong>. Tell us what you are working toward and how we might help.</p>
+<p class="grant-cadence">🗓️ Grants are awarded twice each quarter.</p>
+<div class="grant-chips"><span>Individuals</span><span>Daycares &amp; Learning Centers</span><span>Small Businesses</span><span>Schools &amp; Churches</span><span>Community Groups</span></div>
+</div>
+<div class="grant-band__cta"><button type="button" class="btn btn-primary" data-open-grant>Apply for a Grant</button><a class="grant-band__link" href="#grant-details" data-open-grant>How it works</a></div>
+</section>
 <div class="footer-bottom">
 <div class="footer-brand"><div class="footer-logo">🍍 Tropi<span>Fruit</span><sup class="tm">™</sup></div><span class="woman-founded">🌺 Woman-Founded</span></div>
 <div class="footer-links">
@@ -514,6 +551,7 @@
 <a href="#why" onclick="goToSection(event,'why')">Why Tropi Fruit</a>
 <a href="#fun" onclick="goToSection(event,'fun')">Fun</a>
 <a href="#shop" onclick="goToSection(event,'shop')">Shop</a>
+<a href="#grant" onclick="goToSection(event,'grant')">Community Grant</a>
 <a href="#contact" onclick="goToSection(event,'contact')">Contact Us</a>
 </div>
 <div class="social-row">
@@ -701,6 +739,53 @@
 <p class="modal-footnote">Questions before you order? See our <a href="#shipping" onclick="event.preventDefault(); openPolicyFromModal('shipping');">Shipping Policy</a> or <a href="#privacy" onclick="event.preventDefault(); openPolicyFromModal('privacy');">Privacy Policy</a>.</p>
 </div>
 </div>
+<div class="modal-overlay" id="grantModalOverlay" aria-hidden="true">
+<div class="modal-card grant-modal" role="dialog" aria-modal="true" aria-labelledby="grantModalTitle">
+<button class="modal-close" id="grantClose" aria-label="Close grant form" type="button">✕</button>
+<div class="modal-header">
+<span class="preorder-badge">🤝 Tropi Fruit Community Grant</span>
+<h2 id="grantModalTitle">Tell us how we can help</h2>
+<p>We support individuals, daycares and learning centers, small businesses, and community organizations. Share a little about you and what would make a difference. Grants are awarded twice each quarter.</p>
+</div>
+<div id="grantFormWrap">
+<form id="grantForm" novalidate>
+<label>I am applying as
+<select name="applicant_type" required>
+<option value="">Select one…</option>
+<option>An individual</option>
+<option>A daycare or learning center</option>
+<option>A small business</option>
+<option>A school, church, or nonprofit</option>
+<option>Another community group</option>
+</select></label>
+<label>Your name<input type="text" name="name" maxlength="100" autocomplete="name" required placeholder="Full name"></label>
+<label>Organization or business (if any)<input type="text" name="organization" maxlength="150" autocomplete="organization" placeholder="Name of your center, business, or group"></label>
+<label>Email<input type="email" name="email" maxlength="254" autocomplete="email" required placeholder="you@email.com"></label>
+<label>City and state<input type="text" name="location" maxlength="100" required placeholder="e.g. Silver Spring, MD"></label>
+<label>How would support help you or your community?<textarea name="story" rows="5" maxlength="2000" required placeholder="Tell us about your need, your goals, and who would benefit."></textarea></label>
+<label class="agree-row"><input type="checkbox" name="consent" required> <span>I give Tropi Fruit permission to use this information to review my request and to contact me about it.</span></label>
+<button type="submit" class="btn btn-primary paypal-btn">Submit My Request</button>
+<p id="grantStatus" role="status" aria-live="polite"></p>
+</form>
+<div class="grant-terms" id="grant-details">
+<h3>How it works</h3>
+<ul>
+<li>Share your request using the form above. There is no fee to apply.</li>
+<li>Our team reads every request and follows up by email at tropifruit@pm.me or at the address you provide.</li>
+<li>Grants are awarded twice each quarter. Each request is considered in the next award round.</li>
+<li>Support may take different forms depending on the need and on what Tropi Fruit is able to offer at the time.</li>
+</ul>
+<p class="grant-fine">Submitting a request does not guarantee an award. Eligibility, the form and amount of any support, and all decisions are at the sole discretion of Tropi Fruit LLC, and the award schedule and program may change or end at any time. Please do not include financial account numbers or sensitive personal information. If you are applying on behalf of a minor, a parent or guardian must submit the request. See our <a href="#privacy" onclick="event.preventDefault(); closeGrant(); showPolicy('privacy');">Privacy Policy</a>.</p>
+</div>
+</div>
+<div id="grantThanks" role="status" aria-live="polite" style="display:none;text-align:center;padding:10px 0 6px;">
+<div style="width:72px;height:72px;margin:0 auto 10px;border-radius:50%;background:var(--leaf);color:#fff;font-size:2.4rem;line-height:72px;font-weight:800;">✓</div>
+<h3 style="font-family:'Baloo 2',sans-serif;color:var(--leaf-deep);font-size:1.7rem;margin:6px 0;">Submitted successfully!</h3>
+<p id="grantThanksMsg" style="color:var(--ink-soft);font-weight:600;">We received your request and will be in touch by email.</p>
+<button type="button" class="btn btn-primary" id="grantDone" style="margin-top:16px;">Close</button>
+</div>
+</div>
+</div>
 <!-- Intellectual property notice: read-only dialog, independent of the checkout modal. -->
 <div aria-hidden="true" class="ip-modal-overlay" id="intellectualPropertyModal">
 <section aria-describedby="ipModalIntro" aria-labelledby="ipModalTitle" aria-modal="true" class="ip-dialog" role="dialog" tabindex="-1">
@@ -878,7 +963,12 @@
     });
   })();
 </script>
-<script>document.getElementById('newsletterForm').addEventListener('submit',function(e){e.preventDefault();if(!this.reportValidity())return;var em=this.querySelector('input[name="email"]').value.trim();var s=document.getElementById('newsletterStatus');var sub=encodeURIComponent('Newsletter signup');var body=encodeURIComponent('Please add me to the Tropi Fruit email list: '+em+'\n\nI give Tropi Fruit permission to email me about restocks, new flavors, news, and offers.');s.textContent='Opening your email app to send your signup to tropifruit@pm.me…';window.location.href='mailto:tropifruit@pm.me?subject='+sub+'&body='+body;});</script><button type="button" class="chat-fab" id="chatFab" aria-label="Open chat with Tropi Fruit">💬 Message us</button>
+<script>document.getElementById('newsletterForm').addEventListener('submit',function(e){e.preventDefault();if(!this.reportValidity())return;var em=this.querySelector('input[name="email"]').value.trim();var s=document.getElementById('newsletterStatus');var sub=encodeURIComponent('Newsletter signup');var body=encodeURIComponent('Please add me to the Tropi Fruit email list: '+em+'\n\nI give Tropi Fruit permission to email me about restocks, new flavors, news, and offers.');s.textContent='Opening your email app to send your signup to tropifruit@pm.me…';window.location.href='mailto:tropifruit@pm.me?subject='+sub+'&body='+body;});</script><script>
+// ====== ONE-TIME SETUP: paste your free Web3Forms Access Key here (get it at https://web3forms.com using tropifruit@pm.me).
+// This single key powers both the chat window and the Community Grant form. Until it is set, both fall back to opening the visitor's email app.
+window.TROPI_FORM_KEY='YOUR_ACCESS_KEY_HERE';
+</script>
+<button type="button" class="chat-fab" id="chatFab" aria-label="Open chat with Tropi Fruit">💬 Message us</button>
 <section class="chat-panel" id="chatPanel" role="dialog" aria-label="Chat with Tropi Fruit" aria-hidden="true">
 <div class="chat-head"><div class="chat-avatar">🍍</div><div class="chat-head__text"><strong>Tropi Fruit Team</strong><span>Replies by email</span></div><button type="button" class="chat-close" id="chatClose" aria-label="Close chat">✕</button></div>
 <div class="chat-thread" id="chatThread" aria-live="polite"></div>
@@ -890,7 +980,7 @@
 // ====== SETUP: messages are delivered to tropifruit@pm.me through Web3Forms (free). ======
 // 1) Go to https://web3forms.com, enter tropifruit@pm.me, and they email you an Access Key.
 // 2) Paste that key below. Until then, sending falls back to opening the visitor's email app.
-var WEB3FORMS_KEY='YOUR_ACCESS_KEY_HERE';
+var WEB3FORMS_KEY=window.TROPI_FORM_KEY;
 var TEAM_EMAIL='tropifruit@pm.me';
 
 var fab=document.getElementById('chatFab'),panel=document.getElementById('chatPanel'),thread=document.getElementById('chatThread'),
@@ -952,6 +1042,42 @@ form.addEventListener('submit',function(e){
   }
 });
 input.addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();form.requestSubmit();}});
+})();
+</script>
+<script>
+(function(){
+var TEAM='tropifruit@pm.me';
+var ov=document.getElementById('grantModalOverlay'),form=document.getElementById('grantForm'),st=document.getElementById('grantStatus');
+var wrap=document.getElementById('grantFormWrap'),thanks=document.getElementById('grantThanks'),msg=document.getElementById('grantThanksMsg');
+var lastFocus=null;
+function openGrant(){lastFocus=document.activeElement;ov.classList.add('open');ov.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';wrap.style.display='';thanks.style.display='none';st.textContent='';setTimeout(function(){var f=form.querySelector('select');if(f)f.focus();},80);}
+function closeGrant(){ov.classList.remove('open');ov.setAttribute('aria-hidden','true');document.body.style.overflow='';if(lastFocus&&lastFocus.focus)lastFocus.focus();}
+window.closeGrant=closeGrant;
+document.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('[data-open-grant]');if(t){e.preventDefault();openGrant();}});
+document.getElementById('grantClose').addEventListener('click',closeGrant);
+document.getElementById('grantDone').addEventListener('click',closeGrant);
+ov.addEventListener('click',function(e){if(e.target===ov)closeGrant();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&ov.classList.contains('open'))closeGrant();});
+form.addEventListener('submit',function(e){
+  e.preventDefault();
+  if(!form.reportValidity()){st.textContent='Please complete all required fields before submitting.';return;}
+  var v=function(n){return (form.elements[n].value||'').trim();};
+  var subject='Community Grant request - '+v('applicant_type')+' - '+v('name');
+  var body='Applying as: '+v('applicant_type')+'\nName: '+v('name')+'\nOrganization: '+(v('organization')||'(none)')+'\nEmail: '+v('email')+'\nLocation: '+v('location')+'\n\nHow support would help:\n'+v('story')+'\n\nConsent to contact: yes';
+  var key=window.TROPI_FORM_KEY, btn=form.querySelector('button[type=submit]');
+  if(!key||key==='YOUR_ACCESS_KEY_HERE'){
+    st.textContent='Opening your email app to send this to '+TEAM+'…';
+    window.location.href='mailto:'+TEAM+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+    return;
+  }
+  btn.disabled=true;st.textContent='Sending…';
+  fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({access_key:key,subject:subject,from_name:'Tropi Fruit Community Grant form',name:v('name'),email:v('email'),replyto:v('email'),message:body,botcheck:''})})
+  .then(function(r){return r.json();})
+  .then(function(d){if(!d.success)throw Error();wrap.style.display='none';thanks.style.display='';msg.textContent='Thank you, '+v('name')+'. We received your request and will follow up by email at '+v('email')+'.';form.reset();})
+  .catch(function(){st.textContent='We could not send that just now. Please try again or email '+TEAM+'.';})
+  .then(function(){btn.disabled=false;});
+});
 })();
 </script>
 </body>
